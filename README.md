@@ -9,6 +9,9 @@ GFitzgerald Bikeshare Data Utility
 ### Description
 Enables viewing and analysis of bikeshare data across three major US cities.
 
+### Author
+Gabe Fitzgerald
+
 ### Files used
 Files included are 'bikeshare.py', chicago.csv, new_york_city.csv, washington.csv and README.csv
 
