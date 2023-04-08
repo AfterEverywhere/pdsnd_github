@@ -172,6 +172,7 @@ def user_stats(df,city):
 def raw_data(df):
     '''Displays five lines of raw data, allowing input to either go back or view more data'''
     bookmark = 0
+    pd.set_option('display.max_columns',200)
     print(df.iloc[bookmark:bookmark+5])
     continue_prompt = input('Press enter to display more rows.\n Or go back (b).\n'+'-'*40).lower()
     while continue_prompt not in ['b','back'] and bookmark+5 <= len(df):
