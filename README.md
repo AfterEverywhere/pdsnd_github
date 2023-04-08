@@ -4,10 +4,10 @@
 Readme created and first commit pushed 08/04/23
 
 ### Project Title
-Replace the Project Title
+GFitzgerald Bikeshare Data Utility
 
 ### Description
-Describe what your project is about and what it does
+Enables viewing and analysis of bikeshare data across three major US cities.
 
 ### Files used
 Include the files used
