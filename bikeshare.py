@@ -88,9 +88,9 @@ def time_stats(df, confirmation):
     months = ['january', 'february', 'march', 'april', 'may', 'june']
     print('\n'+confirmation)
     # display the most common month
-    #if len(df['month'].unique()) > 1:
-    common_month = df['month'].mode()
-    print("The month with the most trips was: "+str(months[common_month.iat[0]-1].title()))
+    if len(df['month'].unique()) > 1:
+        common_month = df['month'].mode()
+        print("The month with the most trips was: "+str(months[common_month.iat[0]-1].title()))
     #print(df('month').value_counts())
 
     # display the most common day of week``
@@ -98,7 +98,7 @@ def time_stats(df, confirmation):
         print("\nThe day of the week with the most trips was: "+str(days[df['day_of_week'].mode().iat[0]]))
 
     #display the most common start hour
-        df['start_hour'] = df['Start Time'].dt.hour
+    df['start_hour'] = df['Start Time'].dt.hour
 
     print("\nThe most common hour to start a trip was: "+str(df['start_hour'].mode().iat[0])+":00")
 
