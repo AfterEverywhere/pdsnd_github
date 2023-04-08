@@ -10,8 +10,12 @@ GFitzgerald Bikeshare Data Utility
 Enables viewing and analysis of bikeshare data across three major US cities.
 
 ### Files used
-Include the files used
+Files included are 'bikeshare.py', chicago.csv, new_york_city.csv, washington.csv and README.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Makes use of PANDAS and numpy libraries via Anaconda.
+
+In addition to Udacity resources, I consulted: 
+the userguide for pandas: https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html
+the python documentation: https://docs.python.org/3/
 
