@@ -2,9 +2,10 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+CITY_DATA = { 'chi': 'chicago.csv',
+              'new': 'new_york_city.csv',
+              'nyc': 'new_york_city.csv',
+              'was': 'washington.csv' }
 
 def get_filters():
     '''
@@ -17,8 +18,8 @@ def get_filters():
     '''
     print('Hello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    city = input('Are you interested in Chicago, New York City or Washington?   \n>').lower()
-    while city != 'chicago' and city != 'new york city' and city != 'washington':
+    city = input('Are you interested in Chicago, New York City or Washington?   \n>').lower()[:3]
+    while city != 'chi' and city != 'new' and city != 'was' and city != 'nyc':
         city = input('I don\'t recognise that city. Please enter one of Chicago, New York City or Washington\n>')
                      
 
@@ -87,9 +88,9 @@ def time_stats(df, confirmation):
     months = ['january', 'february', 'march', 'april', 'may', 'june']
     print('\n'+confirmation)
     # display the most common month
-    #if len(df['month'].unique()) > 1:
-    common_month = df['month'].mode()
-    print("The month with the most trips was: "+str(months[common_month.iat[0]-1].title()))
+    if len(df['month'].unique()) > 1:
+        common_month = df['month'].mode()
+        print("The month with the most trips was: "+str(months[common_month.iat[0]-1].title()))
     #print(df('month').value_counts())
 
     # display the most common day of week``
@@ -97,7 +98,7 @@ def time_stats(df, confirmation):
         print("\nThe day of the week with the most trips was: "+str(days[df['day_of_week'].mode().iat[0]]))
 
     #display the most common start hour
-        df['start_hour'] = df['Start Time'].dt.hour
+    df['start_hour'] = df['Start Time'].dt.hour
 
     print("\nThe most common hour to start a trip was: "+str(df['start_hour'].mode().iat[0])+":00")
 
@@ -171,6 +172,7 @@ def user_stats(df,city):
 def raw_data(df):
     '''Displays five lines of raw data, allowing input to either go back or view more data'''
     bookmark = 0
+    pd.set_option('display.max_columns',200)
     print(df.iloc[bookmark:bookmark+5])
     continue_prompt = input('Press enter to display more rows.\n Or go back (b).\n'+'-'*40).lower()
     while continue_prompt not in ['b','back'] and bookmark+5 <= len(df):
